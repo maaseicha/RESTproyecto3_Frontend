@@ -1,0 +1,29 @@
+<div class="container p-4">
+    <div class="d-flex justify-content-between align-items-end">
+        <h1 class="pb-1">Listar Cultivos</h1>
+        <p>
+            <a onclick="print()"class="btn btn-info fas fa-print">&nbsp;Generar Reporte</a>
+        </p>
+        <p>
+            <a routerLink="/productor" class="btn btn-danger fas fa-arrow-left">&nbsp;&nbsp;Regresar</a>
+        </p>
+    </div>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>Dirección del Cultivo</th>
+            <th>Detalle del cultivo</th>
+            <th>Hectareas sembradas</th>
+            <th>Fecha de siembra</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cultivo of cultivos">
+            <td>{{cultivo.nombre_cult}}</td>
+            <td>{{cultivo.detalle_cult}}</td>
+            <td>{{cultivo.cant_cult}}</td>
+            <td>{{cultivo.fecha_cult}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>

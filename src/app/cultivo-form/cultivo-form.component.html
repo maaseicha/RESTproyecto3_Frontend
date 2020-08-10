@@ -1,0 +1,37 @@
+  <div class="container p-4">
+<div class="col-md-6 offset-md-3">
+    <div class="card">
+        <div class="card-header text-center">
+            <h2>Cultivo</h2>
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Nombre del cultivo</label>
+                    <input type="text" class="form-control" [(ngModel)]="cultivo.nombre_cult" placeholder="Especifique el cultivo que contiene el terreno" name="nombre_cult" aria-describedby="emailHelp" autofocus>            
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Detalle del Cultivo</label>
+                    <textarea name="detalle_cult" [(ngModel)]="cultivo.detalle_cult" placeholder="Coloque una decripcion del cultivo que contiene el terreno ejemplo: papa criolla" rows="2" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Cantidad del Cultivo</label>
+                    <input type="number" name="cant_cult" [(ngModel)]="cultivo.cant_cult" class="form-control" placeholder="Cantidad de hectarea del cultivo a sembrar">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Fecha del Cultivo</label>
+                    <input type="date" name="fecha_cult" [(ngModel)]="cultivo.fecha_cult" class="form-control">
+                </div>
+                <div class="row text-center">
+                    <div class="col">
+                        <button class="btn btn-success" (click)="edit ? updateCultivo() : saveNewCultivo()">Guardar</button>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-danger" routerLink="/productor">Cancelar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+  </div>

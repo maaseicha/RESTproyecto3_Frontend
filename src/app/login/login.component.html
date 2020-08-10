@@ -1,0 +1,28 @@
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+      <div class="container">
+        <p>&nbsp;<br></p>
+    </div>
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <img src="../../assets/logosumaklife.png" id="icon" alt="Sumak life" />
+      </div>
+      <div class="container">
+          <p>&nbsp;<br>&nbsp;<br></p>
+      </div>
+      <!-- Login Form -->
+      <form>
+        <input type="text" id="login" [(ngModel)]="user.username" class="fadeIn second" name="login" placeholder="Username" autofocus>
+        <input type="password" id="password" [(ngModel)]="user.password" class="fadeIn third" name="login" placeholder="password">
+        <div class="container">
+            <p>&nbsp;<br></p>
+        </div>
+        <button class="btn btn-success" (click)="ver()">Log In</button>
+        <div class="container">
+            <p>&nbsp;<br></p>
+        </div>
+      </form>
+  
+    </div>
+  </div>

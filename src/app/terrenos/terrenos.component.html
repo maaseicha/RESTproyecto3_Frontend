@@ -1,0 +1,25 @@
+<div class="container p-4">
+    <div class="d-flex justify-content-between align-items-end">
+        <h1 class="pb-1">Listar Terrenos</h1>
+        <p>
+            <a onclick="print()"class="btn btn-info fas fa-print">&nbsp;Generar Reporte</a>
+        </p>
+        <p>
+            <a routerLink="/productor" class="btn btn-danger fas fa-arrow-left">&nbsp;&nbsp;Regresar</a>
+        </p>
+    </div>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>Dirección del Terreno</th>
+            <th>Hectareas del terreno</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let terreno of terrenos">
+            <td>{{terreno.direccion_terreno}}</td>
+            <td>{{terreno.cant_hect}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>

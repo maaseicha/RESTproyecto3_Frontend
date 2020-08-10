@@ -1,0 +1,50 @@
+
+<div class="container p-4">
+  <div class="col-md-6 offset-md-3">
+      <div class="card">
+          <div class="card-header text-center">
+              <h2>Productor</h2>
+          </div>
+          <div class="card-body">
+      <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Cédula</label>
+            <input type="text" placeholder="1234567895" minlength="10" maxlength="10" class="form-control" #cedula="ngModel" name="cedula" [(ngModel)]="productor.cedula">
+            <div *ngIf="cedula.touched">
+              <div *ngIf="cedula.errors.minlength">
+                <small class="form-text text-muted">La cédula debe ser {{cedula.errors.minlength.requiredLength}} dígitos</small>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+              <div class="row">
+                  <div class="col">
+                    <label for="exampleInputPassword1">Nombre</label>
+                    <input type="text" name="nombre" [(ngModel)]="productor.nombre" class="form-control">
+                  </div>
+                  <div class="col">
+                    <label for="exampleInputPassword1">Apellido</label>
+                    <input type="text" name="apellido" [(ngModel)]="productor.apellido" class="form-control" >
+                  </div>
+                </div> </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Direccion</label>
+            <input type="text" name="direccion" [(ngModel)]="productor.direccion" class="form-control">
+          </div>
+          <div class="form-group">
+              <label for="exampleInputPassword1">Email</label>
+              <input type="email" name="email" [(ngModel)]="productor.email" class="form-control">
+          </div>
+            <div class="row text-center">
+                <div class="col">
+                  <button class="btn btn-success" (click)="edit ? updateProductor() : SaveNewProductor()">Guardar</button>
+                </div>
+                <div class="col">
+                  <button type="submit" class="btn btn-danger" routerLink="/productor">Cancelar</button>
+                </div>
+            </div>   
+        </form>
+  </div> 
+  </div>
+  </div>
+</div>

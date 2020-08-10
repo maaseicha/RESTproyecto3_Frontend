@@ -1,0 +1,56 @@
+<div class="container p-4">
+    <div class="d-flex justify-content-between">
+        <form >
+            <div class="form-group">
+                <div class="row">
+                    <div class="col">
+                        <input [(ngModel)]="productor.cedula" type="text" placeholder="Ingrese la cédula" minlength="10" maxlength="10" class="form-control" name="cedula">
+                    </div>
+                    <div class="col">
+                        <button (click)="buscarCedula()"class="btn btn-success fas fa-search">&nbsp;Buscar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <p>
+            <a role="button" class="btn btn-danger fas fa-arrow-left" routerLink="/productor">&nbsp;Regresar</a>
+        </p>
+    </div>
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Cédula</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Dirección</th>
+            <th scope="col">Email</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let productor of productores">
+            <th>{{productor.cedula}}</th>
+            <td>{{productor.nombre}}</td>
+            <td>{{productor.apellido}}</td>
+            <td>{{productor.direccion}}</td>
+            <td>{{productor.email}}</td>
+            <td>
+                <div class="btn-group dropright">
+                    <a class="nav-link  fas fa-ellipsis-h" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ></a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a [routerLink]="['/terreno/productor/'+productor.id_productor]" class="dropdown-item" role="button" data-placement="right" title="Ver Telefono" data-toggle="modal" data-target="#modal2">
+                            <i class="fas fa-tree"></i>
+                            &nbsp;Ver terrenos
+                        </a>
+                        <a [routerLink]="['/terreno/'+productor.id_productor+'/add']" class="dropdown-item" role="button" data-placement="right" title="Añadir nuevo terreno">
+                            <i class="fas fa-plus"></i>
+                            &nbsp;Añadir nuevo terreno
+                        </a>
+                    </div>
+                </div>    
+            </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
